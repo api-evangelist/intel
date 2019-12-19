@@ -1,0 +1,69 @@
+{
+    "name": "Intel",
+    "description": "9635389 Intel Corporation is an American multinational corporation and technology company headquartered in Santa Clara, California, in the Silicon Valley and on 6 Campus Drive, Parsippany-Troy Hills, New Jersey.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/22-intel.jpg",
+    "tags": [
+        "have api",
+        "intel",
+        "telecommunications"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/intel\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Intel",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/22-intel.jpg",
+            "humanURL": "http:\/\/intel.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/intel-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/intel-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/feeds.feedburner.com\/intelnewsroom"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/intel"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/intel"
+        },
+        {
+            "type": "Email",
+            "url": "copyrightagent@intel.com"
+        },
+        {
+            "type": "Email",
+            "url": "copyrightpermission@intel.com"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/Intel"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/intel.com"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/intel.com"
+        }
+    ]
+}
