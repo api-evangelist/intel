@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  title: Intel Trust Authority API
+  description: >-
+    Intel Trust Authority REST API provides attestation services for secure
+    application development and confidential computing verification.
+  version: 1.0.0
+  contact:
+    name: Intel
+    url: https://docs.trustauthority.intel.com/
+servers:
+  - url: https://api.trustauthority.intel.com
+    description: Production
+paths:
+  /attest:
+    post:
+      operationId: createAttestation
+      summary: Create Attestation
+      description: Submit an attestation request for verification.
+      tags:
+        - Attestation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttestationRequest'
+      responses:
+        '200':
+          description: Attestation result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttestationResponse'
+  /tokens/{tokenId}:
+    get:
+      operationId: getAttestationToken
+      summary: Get Attestation Token
+      description: Retrieve and audit an attestation token.
+      tags:
+        - Tokens
+      parameters:
+        - name: tokenId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Token details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttestationToken'
+  /policies:
+    get:
+      operationId: getPolicies
+      summary: Get Policies
+      description: Retrieve attestation policies.
+      tags:
+        - Policies
+      responses:
+        '200':
+          description: Policy list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyList'
+tags:
+  - name: Attestation
+    description: Attestation verification operations
+  - name: Tokens
+    description: Token management operations
+  - name: Policies
+    description: Policy management operations
+components:
+  schemas:
+    AttestationRequest:
+      type: object
+      properties:
+        quote:
+          type: string
+        userData:
+          type: string
+        policyId:
+          type: string
+    AttestationResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        status:
+          type: string
+        issuedAt:
+          type: string
+          format: date-time
+    AttestationToken:
+      type: object
+      properties:
+        id:
+          type: string
+        token:
+          type: string
+        status:
+          type: string
+        expiresAt:
+          type: string
+          format: date-time
+    Policy:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        rules:
+          type: array
+          items:
+            type: string
+    PolicyList:
+      type: object
+      properties:
+        policies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Policy'
