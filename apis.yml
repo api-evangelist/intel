@@ -1,22 +1,18 @@
 aid: intel
-url: 
-  https://raw.githubusercontent.com/api-evangelist/intel/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/intel/refs/heads/main/apis.yml
 apis:
   - aid: intel:trust-authority-api
     name: Intel Trust Authority API
     tags:
-      - Security
       - Attestation
-      - Trust
       - Confidential Computing
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+      - Security
+      - Trust
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.trustauthority.intel.com
-    humanURL: 
-      https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
+    humanURL: https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
     properties:
-      - url: 
-          https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
+      - url: https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
         type: Documentation
       - url: openapi/intel-trust-authority-api-openapi.yml
         type: OpenAPI
@@ -29,19 +25,16 @@ apis:
   - aid: intel:oneapi
     name: Intel oneAPI
     tags:
+      - Accelerators
+      - AI
       - Compute
       - GPU
-      - AI
       - Heterogeneous Computing
-      - Accelerators
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api-portal.intel.com
-    humanURL: 
-      https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
+    humanURL: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
     properties:
-      - url: 
-          https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
+      - url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
         type: Documentation
       - url: openapi/intel-oneapi-openapi.yml
         type: OpenAPI

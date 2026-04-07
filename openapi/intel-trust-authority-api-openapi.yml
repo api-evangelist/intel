@@ -69,10 +69,10 @@ paths:
 tags:
   - name: Attestation
     description: Attestation verification operations
-  - name: Tokens
-    description: Token management operations
   - name: Policies
     description: Policy management operations
+  - name: Tokens
+    description: Token management operations
 components:
   schemas:
     AttestationRequest:
