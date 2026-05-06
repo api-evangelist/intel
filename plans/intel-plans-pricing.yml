@@ -1,151 +1,118 @@
 specification: API Commons Plans
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: intel
+provider: Intel
 providerId: intel
 created: '2026-05-04'
-modified: '2026-05-04'
-tags: []
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - Confidential Computing
+  - Attestation
+  - oneAPI
+  - Heterogeneous Computing
+  - Trust
+description: Intel exposes developer APIs in two distinct shapes. Intel Trust Authority is a free, independent
+  attestation platform with optional paid support; per-call attestation is not metered. Intel oneAPI
+  is an open programming model and developer-tools surface (compilers, libraries, performance tools)
+  rather than a metered API service - downloads and developer access are free, with optional Intel
+  Priority Support subscriptions for enterprise customers. There is no public per-call price list for
+  either.
+notes: Trust Authority paid-support tier and oneAPI Priority Support are sold contract-by-contract;
+  specific dollar amounts are not published. Reconcile against an Intel sales quote.
+sources:
+  - https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
+  - https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
 plans:
-  - id: intel-free
-    name: Free
+  - id: intel-trust-authority-free
+    name: Intel Trust Authority — Free
     type: freemium
-    description: Free entry tier for the intel API surface. Intended for evaluation, prototyping, and
-      low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+    description: Free attestation service for Intel SGX, Intel TDX, TPM/vTPM, and NVIDIA GPU workloads.
+      Available in US/World and EU regions; unavailable to customers in mainland China.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.trustauthority.intel.com
-          - https://api-portal.intel.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.trustauthority.intel.com
-          - https://api-portal.intel.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Intel Trust Authority API
-      - name: Intel oneAPI
-  - id: intel-pro
-    name: Professional
-    type: paid
-    description: Production tier for intel. Provides higher quotas, priority support, and access to the
-      broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.trustauthority.intel.com
-          - https://api-portal.intel.com
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.trustauthority.intel.com
-          - https://api-portal.intel.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
+      - label: Attestation requests
+        description: Cryptographic attestation requests with Faithful Verification audit trail
+        name: attestation_requests
         type: metered
-        metric: requests
+        metric: request
         limit: -1
-        timeFrame: month
+        timeFrame: usage
+        geo: US/EU
+        domains:
+          - https://api.trustauthority.intel.com
+          - https://api.eu.trustauthority.intel.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Intel Trust Authority API
+      - name: Intel SGX / TDX support
+      - name: TPM / vTPM support
+      - name: NVIDIA GPU attestation
+      - name: Faithful Verification audit
+      - name: Self-serve developer documentation
+  - id: intel-trust-authority-supported
+    name: Intel Trust Authority — Paid Support
+    type: enterprise
+    description: Same attestation service, with paid Intel-issued support, SLA, and account contact.
+    entries:
+      - label: Support subscription
+        description: Annual support subscription
+        name: support
+        type: subscription
+        metric: contract
+        limit: -1
+        timeFrame: year
+        geo: US/EU
+        domains:
+          - https://api.trustauthority.intel.com
+          - https://api.eu.trustauthority.intel.com
+        unit: 1
+        price: contact sales
+        userMultiplied: false
+    elements:
+      - name: Intel Trust Authority API
+      - name: Paid support and SLA
+      - name: Named technical contact
+  - id: intel-oneapi
+    name: Intel oneAPI Toolkits
+    type: freemium
+    description: Open cross-architecture programming model and toolkits for CPU / GPU / FPGA / AI accelerator
+      development. Toolkits and developer access are free; Intel Priority Support is an optional paid
+      add-on for enterprise teams.
+    entries:
+      - label: Toolkit access
+        description: Free download / developer use of oneAPI toolkits
+        name: toolkit_access
+        type: metered
+        metric: download
+        limit: -1
+        timeFrame: usage
         geo: global
         domains:
-          - https://api.trustauthority.intel.com
           - https://api-portal.intel.com
-        unit: 1000
-        price: TBD
+        unit: 1
+        price: '0.00'
         userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Intel Trust Authority API
-      - name: Intel oneAPI
-  - id: intel-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for intel. Includes dedicated capacity, contractual SLAs, security
-      review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
+      - label: Intel Priority Support
+        description: Optional annual support subscription for oneAPI toolkits
+        name: priority_support
+        type: subscription
+        metric: contract
         limit: -1
-        timeFrame: month
-        geo: configurable
+        timeFrame: year
+        geo: global
         domains:
-          - https://api.trustauthority.intel.com
           - https://api-portal.intel.com
         unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://api.trustauthority.intel.com
-          - https://api-portal.intel.com
-        unit: 1
-        price: custom
+        price: contact sales
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Intel Trust Authority API
-      - name: Intel oneAPI
-maintainers: []
+      - name: Intel oneAPI compilers and libraries
+      - name: VTune / Advisor / Inspector
+      - name: Cross-architecture programming
+      - name: Free developer use
+      - name: Optional Priority Support
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
