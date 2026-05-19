@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Intel Trust Authority API — Policies
+  description: 'Intel Trust Authority API — Policies. 1 operations. Lead operation: Get Policies. Self-contained Naftiko capability
+    covering one Intel business surface.'
+  tags:
+  - Intel
+  - Policies
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTEL_API_KEY: INTEL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: trust-authority-policies
+    baseUri: https://api.trustauthority.intel.com
+    description: Intel Trust Authority API — Policies business capability. Self-contained, no shared references.
+    resources:
+    - name: policies
+      path: /policies
+      operations:
+      - name: getpolicies
+        method: GET
+        description: Get Policies
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: trust-authority-policies-rest
+    port: 8080
+    description: REST adapter for Intel Trust Authority API — Policies. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/policies
+      name: policies
+      description: REST surface for policies.
+      operations:
+      - method: GET
+        name: getpolicies
+        description: Get Policies
+        call: trust-authority-policies.getpolicies
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: trust-authority-policies-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Intel Trust Authority API — Policies. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-policies
+      description: Get Policies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: trust-authority-policies.getpolicies
+      outputParameters:
+      - type: object
+        mapping: $.

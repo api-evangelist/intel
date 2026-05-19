@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Intel Trust Authority API — Attestation
+  description: 'Intel Trust Authority API — Attestation. 1 operations. Lead operation: Create Attestation. Self-contained
+    Naftiko capability covering one Intel business surface.'
+  tags:
+  - Intel
+  - Attestation
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTEL_API_KEY: INTEL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: trust-authority-attestation
+    baseUri: https://api.trustauthority.intel.com
+    description: Intel Trust Authority API — Attestation business capability. Self-contained, no shared references.
+    resources:
+    - name: attest
+      path: /attest
+      operations:
+      - name: createattestation
+        method: POST
+        description: Create Attestation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: trust-authority-attestation-rest
+    port: 8080
+    description: REST adapter for Intel Trust Authority API — Attestation. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/attest
+      name: attest
+      description: REST surface for attest.
+      operations:
+      - method: POST
+        name: createattestation
+        description: Create Attestation
+        call: trust-authority-attestation.createattestation
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: trust-authority-attestation-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Intel Trust Authority API — Attestation. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: create-attestation
+      description: Create Attestation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: trust-authority-attestation.createattestation
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
