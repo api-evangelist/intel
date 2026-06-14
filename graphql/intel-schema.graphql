@@ -1,0 +1,921 @@
+"""
+Intel GraphQL Schema
+Covers Intel processor architectures, developer tools, AI/ML accelerators, oneAPI,
+OpenVINO, cloud services, memory, storage, networking, and platform specifications.
+"""
+
+# ─── Scalar types ────────────────────────────────────────────────────────────
+
+scalar DateTime
+scalar JSON
+scalar URL
+
+# ─── Root operations ─────────────────────────────────────────────────────────
+
+type Query {
+  processor(id: ID!): Processor
+  processors(filter: ProcessorFilter, limit: Int, offset: Int): [Processor!]!
+  processorFamily(id: ID!): ProcessorFamily
+  processorFamilies: [ProcessorFamily!]!
+  coreArchitecture(id: ID!): CoreArchitecture
+  coreArchitectures: [CoreArchitecture!]!
+  cpuGeneration(id: ID!): CPUGeneration
+  cpuGenerations: [CPUGeneration!]!
+  fpgaSpec(id: ID!): FPGASpec
+  fpgaSpecs(filter: FPGAFilter): [FPGASpec!]!
+  gpuSpec(id: ID!): GPUSpec
+  gpuSpecs: [GPUSpec!]!
+  gaudiAccelerator(id: ID!): Gaudi
+  gaudiAccelerators: [Gaudi!]!
+  aiModel(id: ID!): Model
+  aiModels(filter: ModelFilter): [Model!]!
+  oneAPIToolkit(id: ID!): Toolkit
+  oneAPIToolkits: [Toolkit!]!
+  openVINORuntime: OpenVINO
+  devCloudInstance(id: ID!): CloudInstance
+  devCloudInstances(filter: CloudInstanceFilter): [CloudInstance!]!
+  sdk(id: ID!): SDK
+  sdks: [SDK!]!
+  platform(id: ID!): Platform
+  platforms: [Platform!]!
+  memorySpec(id: ID!): Memory
+  memorySpecs: [Memory!]!
+  storageSpec(id: ID!): StorageSpec
+  storageSpecs: [StorageSpec!]!
+  networkAdapter(id: ID!): Ethernet
+  networkAdapters: [Ethernet!]!
+  developer(id: ID!): Developer
+  project(id: ID!): Project
+  benchmarkResult(id: ID!): BenchmarkResult
+  inferenceResult(id: ID!): InferenceResult
+}
+
+type Mutation {
+  createProject(input: CreateProjectInput!): Project!
+  updateProject(id: ID!, input: UpdateProjectInput!): Project!
+  deleteProject(id: ID!): Boolean!
+  generateAccessToken(projectId: ID!): AccessToken!
+  revokeAccessToken(tokenId: ID!): Boolean!
+  submitInferenceJob(input: InferenceJobInput!): InferenceResult!
+  optimizeModel(input: ModelOptimizationInput!): ModelOptimization!
+  quantizeModel(input: QuantizationInput!): Quantization!
+  provisionCloudInstance(input: CloudInstanceInput!): CloudInstance!
+  terminateCloudInstance(instanceId: ID!): Boolean!
+}
+
+type Subscription {
+  inferenceJobStatus(jobId: ID!): InferenceResult!
+  cloudInstanceStatus(instanceId: ID!): CloudInstance!
+  benchmarkProgress(runId: ID!): BenchmarkResult!
+}
+
+# ─── Processor domain ────────────────────────────────────────────────────────
+
+type Processor {
+  id: ID!
+  name: String!
+  modelNumber: String!
+  family: ProcessorFamily!
+  generation: CPUGeneration!
+  architecture: CoreArchitecture!
+  spec: CPUSpec!
+  instructionSets: [InstructionSet!]!
+  sseVersions: [SSEVersion!]!
+  avxVersions: [AVXVersion!]!
+  integratedGraphics: GPUSpec
+  tdp: TDP!
+  cache: Cache!
+  releaseDate: DateTime
+  endOfLife: DateTime
+  segment: ProcessorSegment!
+  platforms: [Platform!]!
+  url: URL
+}
+
+type ProcessorFamily {
+  id: ID!
+  name: String!
+  description: String
+  segment: ProcessorSegment!
+  processors: [Processor!]!
+  generations: [CPUGeneration!]!
+}
+
+type CoreArchitecture {
+  id: ID!
+  codename: String!
+  processNode: String!
+  coreTypes: [String!]!
+  description: String
+  performanceCores: Int
+  efficiencyCores: Int
+  maxCores: Int
+  supportedMemory: [Memory!]!
+  releaseYear: Int
+}
+
+type CPUSpec {
+  cores: Cores!
+  threads: Threads!
+  baseClockSpeed: ClockSpeed!
+  boostClockSpeed: ClockSpeed
+  l1Cache: Cache!
+  l2Cache: Cache!
+  l3Cache: Cache!
+  tdp: TDP!
+  maxMemory: Int
+  memoryChannels: Int
+  memoryTypes: [Memory!]!
+  pcieLanes: Int
+  pcieVersion: String
+  socket: String
+}
+
+type CPUGeneration {
+  id: ID!
+  name: String!
+  number: Int!
+  codename: String
+  architecture: CoreArchitecture
+  releaseYear: Int
+  processors: [Processor!]!
+}
+
+type Cores {
+  total: Int!
+  performance: Int
+  efficiency: Int
+}
+
+type Threads {
+  total: Int!
+  perCore: Int
+}
+
+type ClockSpeed {
+  value: Float!
+  unit: FrequencyUnit!
+}
+
+type TDP {
+  value: Float!
+  unit: PowerUnit!
+  configurable: Boolean
+  minTDP: Float
+  maxTDP: Float
+}
+
+type Cache {
+  size: Int!
+  unit: StorageUnit!
+  level: Int
+  type: String
+}
+
+# ─── Instruction sets ────────────────────────────────────────────────────────
+
+type InstructionSet {
+  id: ID!
+  name: String!
+  version: String
+  description: String
+  category: InstructionSetCategory!
+}
+
+type SSEVersion {
+  id: ID!
+  version: String!
+  registersWidth: Int
+  description: String
+}
+
+type AVXVersion {
+  id: ID!
+  version: String!
+  registersWidth: Int
+  description: String
+  vnniSupport: Boolean
+}
+
+# ─── FPGA ────────────────────────────────────────────────────────────────────
+
+type FPGASpec {
+  id: ID!
+  name: String!
+  family: String!
+  logicElements: Int
+  embeddedMemory: Int
+  dspBlocks: Int
+  transceivers: Int
+  pcieLanes: Int
+  powerConsumption: TDP
+  toolchain: String
+  useCase: [String!]!
+  url: URL
+}
+
+# ─── GPU ─────────────────────────────────────────────────────────────────────
+
+type GPUSpec {
+  id: ID!
+  name: String!
+  architecture: String
+  executionUnits: Int
+  rayTracingUnits: Int
+  tensorCores: Int
+  vram: Int
+  vramType: String
+  maxClockSpeed: ClockSpeed
+  tdp: TDP
+  apiSupport: [String!]!
+  oneAPISupport: Boolean
+  url: URL
+}
+
+# ─── AI / Gaudi ──────────────────────────────────────────────────────────────
+
+type AI {
+  id: ID!
+  name: String!
+  description: String
+  models: [Model!]!
+  frameworks: [String!]!
+  accelerators: [Gaudi!]!
+  openVINO: OpenVINO
+  inferenceEngine: String
+  supportedPrecisions: [String!]!
+}
+
+type Gaudi {
+  id: ID!
+  name: String!
+  generation: Int!
+  hbmCapacity: HBM!
+  matrixMultiplierEngines: Int
+  tensorProcessorCores: Int
+  networkBandwidth: Float
+  tdp: TDP
+  scaleOut: Boolean
+  supportedFrameworks: [String!]!
+  cloudAvailable: Boolean
+  url: URL
+}
+
+# ─── oneAPI ──────────────────────────────────────────────────────────────────
+
+type oneAPI {
+  id: ID!
+  version: String!
+  toolkits: [Toolkit!]!
+  dpcpp: DPCPP!
+  libraries: [Library!]!
+  supportedArchitectures: [String!]!
+  releaseDate: DateTime
+  url: URL
+}
+
+type DPCPP {
+  id: ID!
+  version: String!
+  baseLanguage: String!
+  extensions: [String!]!
+  compilerFlags: [String!]!
+  description: String
+}
+
+type VTune {
+  id: ID!
+  name: String!
+  version: String!
+  analysisTypes: [String!]!
+  supportedOS: [String!]!
+  gpuProfiling: Boolean
+  description: String
+  url: URL
+}
+
+type Inspector {
+  id: ID!
+  name: String!
+  version: String!
+  analysisTypes: [String!]!
+  supportedOS: [String!]!
+  description: String
+  url: URL
+}
+
+type Advisor {
+  id: ID!
+  name: String!
+  version: String!
+  optimizationTypes: [String!]!
+  vectorizationAnalysis: Boolean
+  rooflineAnalysis: Boolean
+  description: String
+  url: URL
+}
+
+type XTU {
+  id: ID!
+  name: String!
+  version: String!
+  overclock: Boolean
+  powerLimits: Boolean
+  temperatureMonitoring: Boolean
+  supportedOS: [String!]!
+  url: URL
+}
+
+# ─── OpenVINO ────────────────────────────────────────────────────────────────
+
+type OpenVINO {
+  id: ID!
+  version: String!
+  supportedFrameworks: [String!]!
+  supportedDevices: [String!]!
+  modelOptimizer: Boolean
+  runtimeAPI: String
+  benchmarkApp: Boolean
+  url: URL
+  models: [Model!]!
+}
+
+# ─── Models ──────────────────────────────────────────────────────────────────
+
+type Model {
+  id: ID!
+  name: String!
+  task: String!
+  framework: String!
+  precision: String
+  size: Float
+  sizeUnit: StorageUnit
+  inputShape: JSON
+  outputShape: JSON
+  optimizations: [ModelOptimization!]!
+  url: URL
+}
+
+type ModelOptimization {
+  id: ID!
+  model: Model!
+  technique: String!
+  tool: String!
+  baselineAccuracy: Float
+  optimizedAccuracy: Float
+  speedup: Float
+  appliedQuantization: Quantization
+  status: OptimizationStatus!
+  createdAt: DateTime!
+}
+
+type Quantization {
+  id: ID!
+  model: Model!
+  precision: QuantizationPrecision!
+  calibrationDataset: String
+  accuracyDrop: Float
+  throughputGain: Float
+  latencyReduction: Float
+  status: OptimizationStatus!
+}
+
+type Inference {
+  id: ID!
+  model: Model!
+  device: String!
+  batchSize: Int!
+  precision: String!
+  throughput: Throughput!
+  latency: Latency!
+  createdAt: DateTime!
+}
+
+type Throughput {
+  value: Float!
+  unit: String!
+  percentile: Float
+}
+
+type Latency {
+  mean: Float!
+  p50: Float
+  p99: Float
+  unit: String!
+}
+
+type InferenceResult {
+  id: ID!
+  jobId: String!
+  model: Model!
+  inference: Inference!
+  status: JobStatus!
+  createdAt: DateTime!
+  completedAt: DateTime
+  errorMessage: String
+}
+
+# ─── Dev Cloud & Cloud ───────────────────────────────────────────────────────
+
+type DevCloud {
+  id: ID!
+  name: String!
+  description: String
+  instances: [CloudInstance!]!
+  availableToolkits: [Toolkit!]!
+  availableGaudi: [Gaudi!]!
+  url: URL
+}
+
+type CloudInstance {
+  id: ID!
+  name: String!
+  instanceType: String!
+  vcpus: Int!
+  memoryGiB: Float!
+  storageGiB: Float
+  processor: Processor
+  gpu: GPUSpec
+  gaudi: Gaudi
+  region: String!
+  status: InstanceStatus!
+  createdAt: DateTime!
+  terminatedAt: DateTime
+  costPerHour: Float
+}
+
+# ─── Container ───────────────────────────────────────────────────────────────
+
+type Container {
+  id: ID!
+  name: String!
+  registry: String!
+  tag: String!
+  baseOS: String
+  toolkits: [Toolkit!]!
+  size: Float
+  sizeUnit: StorageUnit
+  url: URL
+}
+
+# ─── SDK / Toolkit / Library / Platform ──────────────────────────────────────
+
+type SDK {
+  id: ID!
+  name: String!
+  version: String!
+  description: String
+  languages: [String!]!
+  platforms: [Platform!]!
+  downloadUrl: URL
+  documentationUrl: URL
+  licenseType: String
+}
+
+type Toolkit {
+  id: ID!
+  name: String!
+  version: String!
+  description: String
+  components: [Library!]!
+  targetUseCase: String
+  supportedOS: [String!]!
+  url: URL
+}
+
+type Library {
+  id: ID!
+  name: String!
+  version: String!
+  description: String
+  category: LibraryCategory!
+  languages: [String!]!
+  toolkit: Toolkit
+  url: URL
+}
+
+type Platform {
+  id: ID!
+  name: String!
+  segment: PlatformSegment!
+  description: String
+  processors: [Processor!]!
+  memory: [Memory!]!
+  storage: [StorageSpec!]!
+  networking: [Ethernet!]!
+  formFactor: String
+  url: URL
+}
+
+# ─── Memory ──────────────────────────────────────────────────────────────────
+
+type Memory {
+  id: ID!
+  type: MemoryType!
+  speed: ClockSpeed!
+  capacity: Int
+  channels: Int
+  ecc: Boolean
+  description: String
+}
+
+type DDR5 {
+  id: ID!
+  speed: ClockSpeed!
+  capacity: Int
+  channels: Int
+  ecc: Boolean
+  rdimm: Boolean
+  lrdimm: Boolean
+}
+
+type HBM {
+  id: ID!
+  generation: String!
+  capacityGB: Int!
+  bandwidthGBps: Float!
+  stackCount: Int
+}
+
+# ─── Storage ─────────────────────────────────────────────────────────────────
+
+type StorageSpec {
+  id: ID!
+  name: String!
+  type: StorageType!
+  capacity: Float!
+  unit: StorageUnit!
+  readSpeedMBps: Float
+  writeSpeedMBps: Float
+  iops: Int
+  interface: String
+  formFactor: String
+  url: URL
+}
+
+type NAND {
+  id: ID!
+  cellType: NANDCellType!
+  layers: Int
+  density: Float
+  densityUnit: StorageUnit
+  readLatencyNs: Float
+  writeLatencyNs: Float
+}
+
+type Optane {
+  id: ID!
+  capacity: Float!
+  unit: StorageUnit!
+  readLatencyNs: Float
+  writeLatencyNs: Float
+  endurance: String
+  formFactor: String
+  pmemMode: Boolean
+  url: URL
+}
+
+# ─── Networking ──────────────────────────────────────────────────────────────
+
+type Ethernet {
+  id: ID!
+  name: String!
+  speedGbps: Float!
+  ports: Int
+  rdmaSupport: Boolean
+  sriovSupport: Boolean
+  driver: String
+  offloadCapabilities: [String!]!
+  url: URL
+}
+
+type InfiniBand {
+  id: ID!
+  name: String!
+  speedGbps: Float!
+  ports: Int
+  rdma: Boolean
+  mpiOptimized: Boolean
+  url: URL
+}
+
+type CXL {
+  id: ID!
+  version: String!
+  bandwidth: Float
+  bandwidthUnit: String
+  latencyNs: Float
+  types: [CXLType!]!
+  description: String
+}
+
+# ─── Specialized platforms ───────────────────────────────────────────────────
+
+type ServerPlatform {
+  id: ID!
+  name: String!
+  formFactor: String!
+  maxProcessors: Int
+  maxMemoryTB: Float
+  storageSlots: Int
+  pcieslots: Int
+  networking: [Ethernet!]!
+  cxlSupport: Boolean
+  url: URL
+}
+
+type WorkstationPlatform {
+  id: ID!
+  name: String!
+  formFactor: String!
+  processor: Processor
+  maxMemoryGB: Int
+  gpuSlots: Int
+  thunderboltPorts: Int
+  url: URL
+}
+
+type EmbeddedPlatform {
+  id: ID!
+  name: String!
+  formFactor: String!
+  processor: Processor
+  operatingTemp: String
+  powerConsumption: TDP
+  interfaces: [String!]!
+  os: [String!]!
+  url: URL
+}
+
+type MobileSpec {
+  id: ID!
+  name: String!
+  processor: Processor
+  thermalDesign: String
+  batteryLife: Float
+  display: String
+  thunderboltVersion: String
+  url: URL
+}
+
+type IoTSpec {
+  id: ID!
+  name: String!
+  processor: Processor
+  operatingTemp: String
+  connectivity: [String!]!
+  powerConsumption: TDP
+  securityFeatures: [String!]!
+  url: URL
+}
+
+type EdgeComputing {
+  id: ID!
+  name: String!
+  platform: EmbeddedPlatform
+  processor: Processor
+  aiAcceleration: Boolean
+  latencyMs: Float
+  deploymentModel: String
+  url: URL
+}
+
+# ─── Developer / Auth ────────────────────────────────────────────────────────
+
+type Developer {
+  id: ID!
+  name: String!
+  email: String!
+  organization: String
+  projects: [Project!]!
+  accessTokens: [AccessToken!]!
+  createdAt: DateTime!
+}
+
+type AccessToken {
+  id: ID!
+  name: String!
+  token: String
+  scopes: [String!]!
+  expiresAt: DateTime
+  createdAt: DateTime!
+  lastUsed: DateTime
+}
+
+type ProjectKey {
+  id: ID!
+  project: Project!
+  keyId: String!
+  secret: String
+  createdAt: DateTime!
+  expiresAt: DateTime
+}
+
+type Project {
+  id: ID!
+  name: String!
+  description: String
+  developer: Developer!
+  keys: [ProjectKey!]!
+  instances: [CloudInstance!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type BenchmarkResult {
+  id: ID!
+  runId: String!
+  processor: Processor
+  gaudi: Gaudi
+  workload: String!
+  score: Float!
+  unit: String!
+  configuration: JSON
+  createdAt: DateTime!
+}
+
+# ─── Input types ─────────────────────────────────────────────────────────────
+
+input ProcessorFilter {
+  familyId: ID
+  generationId: ID
+  segment: ProcessorSegment
+  minCores: Int
+  maxTDP: Float
+}
+
+input FPGAFilter {
+  family: String
+  minLogicElements: Int
+}
+
+input ModelFilter {
+  task: String
+  framework: String
+  precision: String
+}
+
+input CloudInstanceFilter {
+  region: String
+  hasGaudi: Boolean
+  minVcpus: Int
+  status: InstanceStatus
+}
+
+input CreateProjectInput {
+  name: String!
+  description: String
+}
+
+input UpdateProjectInput {
+  name: String
+  description: String
+}
+
+input InferenceJobInput {
+  modelId: ID!
+  device: String!
+  batchSize: Int!
+  precision: String
+  instanceId: ID
+}
+
+input ModelOptimizationInput {
+  modelId: ID!
+  technique: String!
+  tool: String!
+}
+
+input QuantizationInput {
+  modelId: ID!
+  precision: QuantizationPrecision!
+  calibrationDataset: String
+}
+
+input CloudInstanceInput {
+  instanceType: String!
+  region: String!
+  projectId: ID!
+}
+
+# ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum ProcessorSegment {
+  DESKTOP
+  LAPTOP
+  SERVER
+  WORKSTATION
+  EMBEDDED
+  IOT
+  MOBILE
+}
+
+enum PlatformSegment {
+  SERVER
+  WORKSTATION
+  DESKTOP
+  MOBILE
+  EMBEDDED
+  EDGE
+  IOT
+}
+
+enum InstructionSetCategory {
+  GENERAL
+  SIMD
+  VECTOR
+  AI
+  CRYPTO
+  MEMORY
+}
+
+enum MemoryType {
+  DDR4
+  DDR5
+  LPDDR5
+  HBM2
+  HBM2E
+  HBM3
+  OPTANE
+}
+
+enum StorageType {
+  NAND_SSD
+  OPTANE_SSD
+  NVMe
+  SATA
+  HDD
+}
+
+enum StorageUnit {
+  B
+  KB
+  MB
+  GB
+  TB
+  PB
+}
+
+enum FrequencyUnit {
+  MHz
+  GHz
+}
+
+enum PowerUnit {
+  mW
+  W
+}
+
+enum NANDCellType {
+  SLC
+  MLC
+  TLC
+  QLC
+}
+
+enum CXLType {
+  TYPE1
+  TYPE2
+  TYPE3
+}
+
+enum QuantizationPrecision {
+  FP32
+  FP16
+  BF16
+  INT8
+  INT4
+}
+
+enum OptimizationStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+enum JobStatus {
+  QUEUED
+  RUNNING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+enum InstanceStatus {
+  PROVISIONING
+  RUNNING
+  STOPPED
+  TERMINATED
+  ERROR
+}
+
+enum LibraryCategory {
+  MATH
+  DEEP_LEARNING
+  SIGNAL_PROCESSING
+  COMPUTER_VISION
+  DATA_ANALYTICS
+  PARALLEL_COMPUTING
+  CRYPTOGRAPHY
+}
