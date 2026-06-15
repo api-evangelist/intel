@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Intel Trust Authority API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attestation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Attestation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.trustauthority.intel.com/attest",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit an attestation request for verification."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Attestation Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.trustauthority.intel.com/tokens/:tokenId",
+            "params": [
+              {
+                "name": "tokenId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve and audit an attestation token."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.trustauthority.intel.com/policies"
+          },
+          "docs": "Retrieve attestation policies."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
