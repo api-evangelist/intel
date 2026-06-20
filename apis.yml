@@ -15,7 +15,7 @@ apis:
   - Confidential Computing
   - Security
   - Trust
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api.trustauthority.intel.com
   humanURL: https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
   properties:
@@ -37,7 +37,7 @@ apis:
   - Compute
   - GPU
   - Heterogeneous Computing
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   baseURL: https://api-portal.intel.com
   humanURL: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
   properties:
