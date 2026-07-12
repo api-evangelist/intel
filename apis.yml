@@ -3,10 +3,14 @@ tags:
 - Fortune 100
 url: https://raw.githubusercontent.com/api-evangelist/intel/refs/heads/main/apis.yml
 common:
+- type: DomainSecurity
+  url: security/intel-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/intel
 - type: LinkedIn
   url: https://www.linkedin.com/company/intel-corporation
+- url: https://newsroom.intel.com/feed
+  type: Blog
 apis:
 - aid: intel:trust-authority-api
   name: Intel Trust Authority API
