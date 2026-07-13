@@ -1,0 +1,8 @@
+---
+title: "Intel Announces Leadership Appointment at Intel Foundry to Accelerate Development and Manufacturing"
+url: "https://newsroom.intel.com/corporate/intel-announces-leadership-appointment-at-intel-foundry-to-accelerate-development-and-manufacturing"
+date: "2026-06-18"
+author: "Matt Hyatt"
+feed_url: "https://newsroom.intel.com/feed"
+---
+SANTA CLARA, Calif., June 18, 2026 — Intel Corporation today announced the appointment of Seok-Hee Lee as executive vice president of Intel Foundry, reporting directly to CEO Lip-Bu Tan. In this role, Lee will lead all advanced packaging, system integration, back-end technology development, and back-end manufacturing, strengthening Intel’s ability to deliver differentiated, system-level innovation
