@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: Intel one Attestation API
+  description: Intel oneAPI provides a unified programming model for heterogeneous computing across CPUs, GPUs, AI accelerators, and FPGAs.
+  version: 1.0.0
+  contact:
+    name: Intel
+    url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
+servers:
+- url: https://api-portal.intel.com
+  description: Production
+tags:
+- name: Attestation
+  description: Attestation verification operations
+paths:
+  /attest:
+    post:
+      operationId: createAttestation
+      summary: Create Attestation
+      description: Submit an attestation request for verification.
+      tags:
+      - Attestation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttestationRequest'
+      responses:
+        '200':
+          description: Attestation result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttestationResponse'
+components:
+  schemas:
+    AttestationRequest:
+      type: object
+      properties:
+        quote:
+          type: string
+        userData:
+          type: string
+        policyId:
+          type: string
+    AttestationResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        status:
+          type: string
+        issuedAt:
+          type: string
+          format: date-time

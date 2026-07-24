@@ -1,0 +1,49 @@
+openapi: 3.1.0
+info:
+  title: Intel one Attestation Policies API
+  description: Intel oneAPI provides a unified programming model for heterogeneous computing across CPUs, GPUs, AI accelerators, and FPGAs.
+  version: 1.0.0
+  contact:
+    name: Intel
+    url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
+servers:
+- url: https://api-portal.intel.com
+  description: Production
+tags:
+- name: Policies
+  description: Policy management operations
+paths:
+  /policies:
+    get:
+      operationId: getPolicies
+      summary: Get Policies
+      description: Retrieve attestation policies.
+      tags:
+      - Policies
+      responses:
+        '200':
+          description: Policy list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyList'
+components:
+  schemas:
+    PolicyList:
+      type: object
+      properties:
+        policies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Policy'
+    Policy:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        rules:
+          type: array
+          items:
+            type: string

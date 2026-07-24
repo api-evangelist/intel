@@ -1,0 +1,49 @@
+openapi: 3.1.0
+info:
+  title: Intel one Attestation Tokens API
+  description: Intel oneAPI provides a unified programming model for heterogeneous computing across CPUs, GPUs, AI accelerators, and FPGAs.
+  version: 1.0.0
+  contact:
+    name: Intel
+    url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
+servers:
+- url: https://api-portal.intel.com
+  description: Production
+tags:
+- name: Tokens
+  description: Token management operations
+paths:
+  /tokens/{tokenId}:
+    get:
+      operationId: getAttestationToken
+      summary: Get Attestation Token
+      description: Retrieve and audit an attestation token.
+      tags:
+      - Tokens
+      parameters:
+      - name: tokenId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Token details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttestationToken'
+components:
+  schemas:
+    AttestationToken:
+      type: object
+      properties:
+        id:
+          type: string
+        token:
+          type: string
+        status:
+          type: string
+        expiresAt:
+          type: string
+          format: date-time
