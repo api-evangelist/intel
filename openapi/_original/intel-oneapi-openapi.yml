@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: Intel oneAPI
+  description: >-
+    Intel oneAPI provides a unified programming model for heterogeneous
+    computing across CPUs, GPUs, AI accelerators, and FPGAs.
+  version: 1.0.0
+  contact:
+    name: Intel
+    url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
+servers:
+  - url: https://api-portal.intel.com
+    description: Production
+paths:
+  /tools:
+    get:
+      operationId: getTools
+      summary: Get Developer Tools
+      description: Retrieve available oneAPI developer tools and toolkits.
+      tags:
+        - Tools
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolList'
+  /toolkits:
+    get:
+      operationId: getToolkits
+      summary: Get Toolkits
+      description: Retrieve available oneAPI toolkits.
+      tags:
+        - Tools
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToolkitList'
+tags:
+  - name: Tools
+    description: Developer tools and toolkit operations
+components:
+  schemas:
+    Tool:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        version:
+          type: string
+        platform:
+          type: string
+    ToolList:
+      type: object
+      properties:
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tool'
+    Toolkit:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        components:
+          type: array
+          items:
+            type: string
+    ToolkitList:
+      type: object
+      properties:
+        toolkits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Toolkit'

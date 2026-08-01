@@ -1,0 +1,20 @@
+{
+  "provider": "intel",
+  "sources": [
+    "intel-attestation-api-openapi.yml",
+    "intel-policies-api-openapi.yml",
+    "intel-tokens-api-openapi.yml",
+    "intel-tools-api-openapi.yml"
+  ],
+  "outputs": [
+    "intel-attestation-api-openapi.yml",
+    "intel-policies-api-openapi.yml",
+    "intel-tokens-api-openapi.yml",
+    "intel-tools-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
