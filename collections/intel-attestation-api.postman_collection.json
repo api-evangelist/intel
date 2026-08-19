@@ -1,0 +1,123 @@
+{
+  "item": [
+    {
+      "id": "a1283a31-78a3-4a39-acdb-48686e115843",
+      "name": "Attestation",
+      "description": {
+        "content": "Attestation verification operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "013044ff-14af-4659-b1d4-e3cec0df3659",
+          "name": "Create Attestation",
+          "request": {
+            "name": "Create Attestation",
+            "description": {
+              "content": "Submit an attestation request for verification.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "attest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quote\": \"<string>\",\n  \"userData\": \"<string>\",\n  \"policyId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9f773bec-0f5a-454b-b587-d0f46c1aef1a",
+              "name": "Attestation result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quote\": \"<string>\",\n  \"userData\": \"<string>\",\n  \"policyId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token\": \"string\",\n  \"status\": \"string\",\n  \"issuedAt\": \"2021-09-23T21:54:39.924Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-portal.intel.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e9495a87-4718-43d5-8f58-7ed5fb2d1026",
+    "name": "Intel one Attestation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Intel oneAPI provides a unified programming model for heterogeneous computing across CPUs, GPUs, AI accelerators, and FPGAs.\n\nContact Support:\n Name: Intel",
+      "type": "text/plain"
+    }
+  }
+}

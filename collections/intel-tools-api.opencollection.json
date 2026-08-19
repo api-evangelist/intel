@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Intel one Attestation Tools API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Developer Tools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-portal.intel.com/tools"
+          },
+          "docs": "Retrieve available oneAPI developer tools and toolkits."
+        },
+        {
+          "info": {
+            "name": "Get Toolkits",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-portal.intel.com/toolkits"
+          },
+          "docs": "Retrieve available oneAPI toolkits."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

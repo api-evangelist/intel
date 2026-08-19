@@ -1,0 +1,172 @@
+{
+  "item": [
+    {
+      "id": "d022f418-326a-4fae-81dd-1455c51d5ffd",
+      "name": "Tools",
+      "description": {
+        "content": "Developer tools and toolkit operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e87b78be-e695-455e-9050-4f1e301ce240",
+          "name": "Get Developer Tools",
+          "request": {
+            "name": "Get Developer Tools",
+            "description": {
+              "content": "Retrieve available oneAPI developer tools and toolkits.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1cd1d1a-396b-41cb-9282-4e20c93e980a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tools\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"version\": \"string\",\n      \"platform\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"version\": \"string\",\n      \"platform\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ed453bb-fb6a-4642-b61a-343870f69870",
+          "name": "Get Toolkits",
+          "request": {
+            "name": "Get Toolkits",
+            "description": {
+              "content": "Retrieve available oneAPI toolkits.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "toolkits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3d09436-f718-450d-849a-2556564b5676",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "toolkits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"toolkits\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"components\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"components\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-portal.intel.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f5a91533-21cd-418b-b2c1-debdcf59b179",
+    "name": "Intel one Attestation Tools API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Intel oneAPI provides a unified programming model for heterogeneous computing across CPUs, GPUs, AI accelerators, and FPGAs.\n\nContact Support:\n Name: Intel",
+      "type": "text/plain"
+    }
+  }
+}

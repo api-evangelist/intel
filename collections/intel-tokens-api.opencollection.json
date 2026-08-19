@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Intel one Attestation Tokens API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Attestation Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-portal.intel.com/tokens/:tokenId",
+            "params": [
+              {
+                "name": "tokenId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve and audit an attestation token."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,120 @@
+{
+  "item": [
+    {
+      "id": "ceb50ef9-2916-42e5-af3a-e53017438cd1",
+      "name": "Tokens",
+      "description": {
+        "content": "Token management operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "70e44028-e58d-4d12-980d-d71ed13b633d",
+          "name": "Get Attestation Token",
+          "request": {
+            "name": "Get Attestation Token",
+            "description": {
+              "content": "Retrieve and audit an attestation token.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tokens",
+                ":tokenId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tokenId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "21b717a8-1a55-414b-a465-3a5821d80e2a",
+              "name": "Token details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tokens",
+                    ":tokenId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tokenId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"token\": \"string\",\n  \"status\": \"string\",\n  \"expiresAt\": \"1970-11-29T17:44:27.027Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-portal.intel.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8314edad-9bad-49b2-9d76-63c59662c631",
+    "name": "Intel one Attestation Tokens API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Intel oneAPI provides a unified programming model for heterogeneous computing across CPUs, GPUs, AI accelerators, and FPGAs.\n\nContact Support:\n Name: Intel",
+      "type": "text/plain"
+    }
+  }
+}

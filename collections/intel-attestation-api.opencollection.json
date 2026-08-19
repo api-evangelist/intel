@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Intel one Attestation API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attestation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Attestation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-portal.intel.com/attest",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit an attestation request for verification."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
