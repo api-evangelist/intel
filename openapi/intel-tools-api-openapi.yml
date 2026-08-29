@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Intel one Attestation Tools API
+  title: Intel one Tools API
   description: Intel oneAPI provides a unified programming model for heterogeneous computing across CPUs, GPUs, AI accelerators, and FPGAs.
   version: 1.0.0
   contact:
@@ -43,26 +43,13 @@ paths:
                 $ref: '#/components/schemas/ToolkitList'
 components:
   schemas:
-    Tool:
+    ToolList:
       type: object
       properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        version:
-          type: string
-        platform:
-          type: string
-    ToolkitList:
-      type: object
-      properties:
-        toolkits:
+        tools:
           type: array
           items:
-            $ref: '#/components/schemas/Toolkit'
+            $ref: '#/components/schemas/Tool'
     Toolkit:
       type: object
       properties:
@@ -76,10 +63,23 @@ components:
           type: array
           items:
             type: string
-    ToolList:
+    ToolkitList:
       type: object
       properties:
-        tools:
+        toolkits:
           type: array
           items:
-            $ref: '#/components/schemas/Tool'
+            $ref: '#/components/schemas/Toolkit'
+    Tool:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        version:
+          type: string
+        platform:
+          type: string

@@ -1,20 +1,27 @@
 {
   "provider": "intel",
   "sources": [
-    "intel-attestation-api-openapi.yml",
-    "intel-policies-api-openapi.yml",
-    "intel-tokens-api-openapi.yml",
-    "intel-tools-api-openapi.yml"
+    "_original/intel-oneapi-openapi.yml",
+    "_original/intel-trust-authority-api-openapi.yml"
   ],
   "outputs": [
+    "intel-tools-api-openapi.yml",
     "intel-attestation-api-openapi.yml",
     "intel-policies-api-openapi.yml",
-    "intel-tokens-api-openapi.yml",
-    "intel-tools-api-openapi.yml"
+    "intel-tokens-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "intel-oneapi-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "intel-trust-authority-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0"
+  ],
+  "skipped": [
+    "intel-attestation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "intel-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "intel-tokens-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "intel-tools-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
