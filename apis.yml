@@ -28,6 +28,9 @@ tags:
 - Fortune 100
 url: https://raw.githubusercontent.com/api-evangelist/intel/refs/heads/main/apis.yml
 common:
+- type: CapabilityMap
+  url: capabilities/intel-capability-edges.yml
+  name: intel Business Capability Map
 - type: AgenticAccess
   url: agentic-access/intel-agentic-access.yml
 - type: DomainSecurity

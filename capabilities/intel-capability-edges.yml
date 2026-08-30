@@ -1,0 +1,26 @@
+slug: intel
+provider: intel
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Electrical Components & Equipment
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Attestation
+  spec_file: intel-attestation-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.7
+  evidence: '"provides attestation services for secure application development and confidential computing
+    verification"; POST /attest createAttestation'
+  reason: Remote attestation of confidential-computing workloads is a security verification control, so
+    Cybersecurity Management is the honest L1. No single L2 clearly fits (it spans security architecture
+    and trust verification), so L2 is left null.
