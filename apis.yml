@@ -29,6 +29,8 @@ tags:
 - Fortune 100
 url: https://raw.githubusercontent.com/api-evangelist/intel/refs/heads/main/apis.yml
 common:
+- type: Website
+  url: https://intel.com
 - type: CapabilityMap
   url: capabilities/intel-capability-edges.yml
   name: intel Business Capability Map
@@ -107,6 +109,6 @@ apis:
     url: graphql/intel-graphql.md
   - type: Documentation
     url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
-description: Discover Intel® Trust Authority, the independent attestation service
-  for securing your confidential computing workloads.
-modified: '2026-05-19'
+description: Discover Intel® Trust Authority, the independent attestation service for securing your confidential
+  computing workloads.
+modified: '2026-09-16'
