@@ -1,7 +1,9 @@
 ---
 title: Intel Newsroom Home
 url: https://newsroom.intel.com/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Intel" press release artificial intelligence'
 position: 1
 source: serpapi-google

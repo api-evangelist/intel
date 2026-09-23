@@ -1,7 +1,9 @@
 ---
 title: All News - Newsroom
 url: https://newsroom.intel.com/all-news
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Intel" press release artificial intelligence'
 position: 3
 source: serpapi-google

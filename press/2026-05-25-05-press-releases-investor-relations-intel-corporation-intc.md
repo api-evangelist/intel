@@ -1,7 +1,9 @@
 ---
 title: 'Press Releases - Investor Relations :: Intel Corporation (INTC)'
 url: https://www.intc.com/news-events/press-releases?page=10
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Intel" press release artificial intelligence'
 position: 5
 source: serpapi-google

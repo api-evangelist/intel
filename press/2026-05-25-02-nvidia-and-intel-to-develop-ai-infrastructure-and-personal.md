@@ -1,7 +1,9 @@
 ---
 title: NVIDIA and Intel to Develop AI Infrastructure and Personal ...
 url: http://nvidianews.nvidia.com/news/nvidia-and-intel-to-develop-ai-infrastructure-and-personal-computing-products
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Intel" press release artificial intelligence'
 position: 2
 source: serpapi-google

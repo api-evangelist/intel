@@ -29,6 +29,13 @@ paths:
                 $ref: '#/components/schemas/PolicyList'
 components:
   schemas:
+    PolicyList:
+      type: object
+      properties:
+        policies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Policy'
     Policy:
       type: object
       properties:
@@ -40,10 +47,3 @@ components:
           type: array
           items:
             type: string
-    PolicyList:
-      type: object
-      properties:
-        policies:
-          type: array
-          items:
-            $ref: '#/components/schemas/Policy'
