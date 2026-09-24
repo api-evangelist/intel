@@ -57,8 +57,6 @@ apis:
     url: openapi/intel-attestation-api-openapi.yml
   - type: Documentation
     url: https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
-  - type: GraphQL
-    url: graphql/intel-graphql.md
   - type: Documentation
     url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
 - aid: intel:intel-policies-api
@@ -73,8 +71,6 @@ apis:
     url: openapi/intel-policies-api-openapi.yml
   - type: Documentation
     url: https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
-  - type: GraphQL
-    url: graphql/intel-graphql.md
   - type: Documentation
     url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
 - aid: intel:intel-tokens-api
@@ -89,8 +85,6 @@ apis:
     url: openapi/intel-tokens-api-openapi.yml
   - type: Documentation
     url: https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
-  - type: GraphQL
-    url: graphql/intel-graphql.md
   - type: Documentation
     url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
 - aid: intel:intel-tools-api
@@ -105,8 +99,6 @@ apis:
     url: openapi/intel-tools-api-openapi.yml
   - type: Documentation
     url: https://docs.trustauthority.intel.com/main/articles/restapi-intro.html
-  - type: GraphQL
-    url: graphql/intel-graphql.md
   - type: Documentation
     url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
 description: Discover Intel® Trust Authority, the independent attestation service for securing your confidential
