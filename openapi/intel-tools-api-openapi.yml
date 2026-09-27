@@ -43,19 +43,6 @@ paths:
                 $ref: '#/components/schemas/ToolkitList'
 components:
   schemas:
-    Toolkit:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        components:
-          type: array
-          items:
-            type: string
     Tool:
       type: object
       properties:
@@ -69,13 +56,19 @@ components:
           type: string
         platform:
           type: string
-    ToolkitList:
+    Toolkit:
       type: object
       properties:
-        toolkits:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        components:
           type: array
           items:
-            $ref: '#/components/schemas/Toolkit'
+            type: string
     ToolList:
       type: object
       properties:
@@ -83,3 +76,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tool'
+    ToolkitList:
+      type: object
+      properties:
+        toolkits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Toolkit'
