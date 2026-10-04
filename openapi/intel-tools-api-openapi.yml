@@ -56,13 +56,6 @@ components:
           type: array
           items:
             type: string
-    ToolkitList:
-      type: object
-      properties:
-        toolkits:
-          type: array
-          items:
-            $ref: '#/components/schemas/Toolkit'
     ToolList:
       type: object
       properties:
@@ -83,3 +76,10 @@ components:
           type: string
         platform:
           type: string
+    ToolkitList:
+      type: object
+      properties:
+        toolkits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Toolkit'
