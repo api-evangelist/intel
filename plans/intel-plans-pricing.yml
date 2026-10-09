@@ -119,3 +119,41 @@ plans:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  - subscription
+  units:
+  - negotiated
+  - object
+  - request
+  plans:
+  - name: Intel Trust Authority — Free
+    access: freemium
+    model: metered
+    model_how: derived
+    units:
+    - request
+    periods:
+    - per-use
+  - name: Intel Trust Authority — Paid Support
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - year
+  - name: Intel oneAPI Toolkits
+    access: freemium
+    model: hybrid
+    model_how: derived
+    units:
+    - negotiated
+    - object
+    periods:
+    - per-use
+    - year

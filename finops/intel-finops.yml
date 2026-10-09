@@ -113,10 +113,8 @@ apis:
 unitEconomics:
   - name: Cost per Active Workload
     metric: support_cost / active_workloads
-    target: TBD
   - name: Attestation Requests per Workload
     metric: attestation_requests / active_workloads
-    target: TBD
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
