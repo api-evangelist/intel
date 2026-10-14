@@ -19,7 +19,33 @@ edges:
     api_families_basis: null
     detected_by: sweep-telco-network-apis.py
     detected: '2026-10-12'
+- partner_name: Visual Studio Code Marketplace
+  partner: vs-code-marketplace
+  partner_match: aggregator
+  type: marketplace
+  marketplace: vscode
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://marketplace.visualstudio.com/publishers/intel-corporation
+  listing_count: 7
+  apps:
+  - Environment Configurator for Intel Software Developer Tools
+  - Code Sample Browser for Intel Software Developer Tools
+  - GDB with GPU Debug Support for Intel® oneAPI Toolkits
+  - Analysis Configurator for Intel Software Developer Tools
+  - Extension Pack for Intel Software Developer Tools
+  publisher_name: Intel
+  badges:
+  - Verified publisher
+  - Verified domain
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
 generated: '2026-10-12'
 method: searched
 checked:
+- https://marketplace.visualstudio.com/vscode
 - https://raw.githubusercontent.com/camaraproject/camara-landscape/main/landscape.yml
+marketplace_apps: []
+source:
+- https://marketplace.visualstudio.com/vscode
