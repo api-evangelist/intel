@@ -41,11 +41,54 @@ edges:
   - Verified domain
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
+- partner_name: Open Robotics (ROS package index)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: ROS packages
+  evidence: https://github.com/IntelLabs/scenario_execution.git
+  channel: standard-directory
+  relationship: standard-participant
+  contract_reference:
+    register: ROS 2 rosdistro (repo.ros2.org/rosdistro_cache)
+    spec_file: null
+    standard: ROS 2
+    role: ros-package-maintainer
+    matched_domain: intel.com
+    matched_by: domain
+    source_owner: IntelLabs
+    distros:
+    - humble
+    - jazzy
+    - kilted
+    - rolling
+    packages: 33
+    sample_packages:
+    - depth_image_proc
+    - dwb_core
+    - image_publisher
+    - message_filters
+    - nav2_amcl
+    - nav2_behavior_tree
+    - nav2_behaviors
+    - nav2_bringup
+    signal_note: 'participation only: packages/distros are context, never read'
+    detected_by: sweep-industrial-robotics.py
+    detected: '2026-10-15'
+  detected_by: sweep-industrial-robotics.py
+  first_seen: '2026-10-15'
 generated: '2026-10-12'
 method: searched
 checked:
+- https://marketplace.odva.org/organizations
 - https://marketplace.visualstudio.com/vscode
+- https://opcfoundation.org/products/
 - https://raw.githubusercontent.com/camaraproject/camara-landscape/main/landscape.yml
+- https://repo.ros2.org/rosdistro_cache/humble-cache.yaml.gz
+- https://repo.ros2.org/rosdistro_cache/jazzy-cache.yaml.gz
+- https://repo.ros2.org/rosdistro_cache/kilted-cache.yaml.gz
+- https://repo.ros2.org/rosdistro_cache/rolling-cache.yaml.gz
 marketplace_apps: []
 source:
 - https://marketplace.visualstudio.com/vscode
