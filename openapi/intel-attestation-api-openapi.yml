@@ -35,15 +35,6 @@ paths:
                 $ref: '#/components/schemas/AttestationResponse'
 components:
   schemas:
-    AttestationRequest:
-      type: object
-      properties:
-        quote:
-          type: string
-        userData:
-          type: string
-        policyId:
-          type: string
     AttestationResponse:
       type: object
       properties:
@@ -54,3 +45,12 @@ components:
         issuedAt:
           type: string
           format: date-time
+    AttestationRequest:
+      type: object
+      properties:
+        quote:
+          type: string
+        userData:
+          type: string
+        policyId:
+          type: string
