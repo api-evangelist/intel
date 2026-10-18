@@ -256,9 +256,27 @@ edges:
     detected: '2026-10-15'
   detected_by: sweep-mlops.py
   first_seen: '2026-10-15'
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/intel_skills_for_innovation_for_google_c/16113332384
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Intel Skills for Innovation for Google Classroom™
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
 generated: '2026-10-12'
 method: searched
 checked:
+- google-workspace/integrations/google-workspace-integration-edges.yml
 - https://focus.finops.org/data-generators/
 - https://github.com/cncf/k8s-conformance
 - https://github.com/cncf/landscape
