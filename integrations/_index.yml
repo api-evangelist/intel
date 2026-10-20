@@ -244,3 +244,134 @@
     detected: '2026-10-19'
   status: not-a-workflow
   arazzo: null
+- slug: intel-khronos-group-conformant-products
+  label: Khronos Group conformant products
+  partner_name: Khronos Group conformant products
+  category: graphics API conformance
+  type: register
+  channel: standard-directory
+  evidence: https://www.khronos.org/conformance/adopters/conformant-products/opencl#submission_482
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Khronos Group conformant products + API adopters (khronos.org/conformance/adopters)
+    standard: Khronos conformance
+    spec_file: null
+    role: khronos-conformant-adopter
+    registered_name: Intel
+    register_id: https://www.khronos.org/conformance/adopters/conformant-products/opencl#submission_482
+    matched_domain: intel.com
+    matched_by: domain
+    certified_products:
+    - product: OpenCL
+      lapsed: false
+      newest_submission: '2026-10-11'
+      versions:
+      - OpenCL_1_2
+      - OpenCL_2_0
+      - OpenCL_2_1
+      - OpenCL_3_0
+      submissions_listed: 192
+    - product: OpenGL
+      lapsed: false
+      newest_submission: '2026-08-27'
+      versions:
+      - OpenGL_4_4
+      - OpenGL_4_5
+      - OpenGL_4_6
+      submissions_listed: 112
+    - product: OpenGL ES
+      lapsed: false
+      newest_submission: '2026-09-03'
+      versions:
+      - OpenGL_ES_2_0
+      - OpenGL_ES_3_0
+      - OpenGL_ES_3_1
+      - OpenGL_ES_3_2
+      submissions_listed: 51
+    - product: OpenVX
+      lapsed: false
+      newest_submission: '2017-06-21'
+      versions:
+      - OpenVX_1_0
+      - OpenVX_1_1
+      submissions_listed: 7
+    - product: SYCL
+      lapsed: false
+      newest_submission: '2024-12-13'
+      versions:
+      - SYCL_2020
+      submissions_listed: 4
+    - product: Vulkan
+      lapsed: false
+      newest_submission: '2026-10-07'
+      versions:
+      - Vulkan_1_1
+      - Vulkan_1_2
+      - Vulkan_1_3
+      - Vulkan_1_4
+      submissions_listed: 131
+    products_sample:
+    - 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz
+    - AZ210A
+    - AZ210B
+    - AZ510
+    - Android 4.4.2 32-bit running on Intel® Atom™ Processors formally “Bay Trail” with Intel® HD Graphics
+    - Android 5.1 32-bit running on Intel Atom Processors formally "Bay Trail" with Intel HD Graphics
+    - Android 5.1 64-bit running on Intel Atom x7 and x5 Processors (formerly "Cherry Trail") with Intel HD Graphics
+    - Android 5.1 64-bit running on Intel® Atom Processors formally "Bay Trail" with Intel HD Graphics
+    - Android 6.0 64-bit running on Intel® Atom™ x7 and x5 Processors (formerly “Cherry Trail”) with Intel® HD Graphics
+    - Android 7.0 64-bit running on Intel® Atom™ x7 and x5 Processors (formerly “Cherry Trail”) with Intel® HD Graphics
+    signal_note: certified_products = one entry per Khronos API the company is a conformant adopter of (the API
+      Adopters page), never per submission or product; dates, versions and submission counts are context. Khronos
+      marks no conformance as superseded or lapsed, so lapsed is false
+    detected_by: sweep-xr-graphics.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: intel-khronos-group-members
+  label: Khronos Group (members)
+  partner_name: Khronos Group (members)
+  category: graphics standards body membership
+  type: register
+  channel: standard-directory
+  evidence: https://www.khronos.org/members/list
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Khronos Group members list (khronos.org/members/list)
+    standard: Khronos Group
+    spec_file: null
+    role: khronos-member
+    registered_name: Intel
+    register_id: https://www.khronos.org/members/list
+    matched_domain: intel.com
+    matched_by: domain
+    signal_note: 'participation only: membership level is partner_tier, never counted'
+    detected_by: sweep-xr-graphics.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: intel-alliance-for-openusd-aousd
+  label: Alliance for OpenUSD (AOUSD)
+  partner_name: Alliance for OpenUSD (AOUSD)
+  category: OpenUSD standards body
+  type: register
+  channel: standard-directory
+  evidence: https://aousd.org/members/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Alliance for OpenUSD members (aousd.org/members; landscape.aousd.org/data/full.json)
+    standard: OpenUSD
+    spec_file: null
+    role: aousd-member
+    registered_name: Intel Corporation
+    register_id: aousd-members--general--intel-corporation
+    matched_domain: intel.com
+    matched_by: domain
+    signal_note: 'participation only: steering / general is partner_tier, never counted'
+    detected_by: sweep-xr-graphics.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
