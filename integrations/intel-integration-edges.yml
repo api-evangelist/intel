@@ -41,23 +41,6 @@ edges:
   - Verified domain
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
-- partner_name: Google Workspace (own)
-  partner: google-workspace
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://workspace.google.com/marketplace/app/intel_skills_for_innovation_for_google_c/16113332384
-  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
-  apps:
-  - Intel Skills for Innovation for Google Classroom™
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Google Workspace app
 - partner_name: Open Robotics (ROS package index)
   partner: null
   partner_match: register
@@ -406,6 +389,56 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-xr-graphics.py
   first_seen: '2026-10-20'
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/intel_skills_for_innovation_for_google_c/16113332384
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Intel Skills for Innovation for Google Classroom™
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
+- partner_name: Docker Hub (docker-verified-publisher)
+  partner: docker-hub
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: docker-verified-publisher
+  evidence: https://hub.docker.com/u/intel
+  mirror_of: docker-hub/integrations/docker-hub-integration-edges.yml
+  apps:
+  - intel/intel-gpu-plugin
+  - intel/intel-gpu-initcontainer
+  - intel/power-node-agent
+  - intel/ia-time-series-analytics-microservice
+  - intel/sglang-dev
+  - intel/multimodal-dataprep
+  - intel/text-to-speech
+  - intel/metrics-manager
+  - intel/sensor-manager
+  - intel/agent-quality-handler
+  - intel/multimodal-agentic-ui
+  - intel/vector-retriever-vdms
+  - intel/vms-adapter-backend
+  - intel/scenescape-tracker
+  - intel/vms-adapter-ui
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: Docker Verified Publisher
+  badges:
+  - Docker Verified Publisher
 generated: '2026-10-12'
 method: searched
 checked:
@@ -429,6 +462,7 @@ checked:
 - https://www.khronos.org/conformance/adopters/conformant-products
 - https://www.khronos.org/conformance/adopters/file-format-adopters
 - https://www.khronos.org/members/list
+- docker-hub/integrations/docker-hub-integration-edges.yml
 marketplace_apps: []
 source:
 - https://marketplace.visualstudio.com/vscode
