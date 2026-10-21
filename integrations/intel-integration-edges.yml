@@ -439,6 +439,116 @@ edges:
   category: Docker Verified Publisher
   badges:
   - Docker Verified Publisher
+- partner_name: Open Compute Project marketplace
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.opencompute.org/marketplace/it-infrastructure/intel-ethernet-network-adapter-e835-xxvda2-for-ocp-3-0/
+  category: data-center hardware recognition
+  contract_reference:
+    register: Open Compute Project marketplace (opencompute.org/products; /wp-json/wp/v2/marketplace + /companies)
+    standard: Open Compute Project
+    spec_file: null
+    role: ocp-recognised-product-vendor
+    registered_name: Intel
+    register_id: https://www.opencompute.org/members/intel/
+    matched_domain: intel.com
+    matched_by: domain
+    listings: 14
+    recognised_listings: 14
+    products_sample:
+    - Intel® Cyclone® V RunBMC Card
+    - Intel® Ethernet Network Adapter E610-IT4 for OCP 3.0
+    - Intel® Ethernet Network Adapter E610-XT2/XT4 for OCP 3.0
+    - Intel® Ethernet Network Adapter E810-CQDA2 for OCP 3.0
+    - Intel® Ethernet Network Adapter E810-XXVDA2 for OCP 3.0
+    - Intel® Ethernet Network Adapter E810-XXVDA4 for OCP 3.0
+    - Intel® Ethernet Network Adapter E830-XXVDA8F for OCP 3.0
+    - Intel® Ethernet Network Adapter E835-CCQDA1/CQDA2 for OCP 3.0
+    - Intel® Ethernet Network Adapter E835-XXVDA2 for OCP 3.0
+    - Intel® Ethernet Network Adapter E835-XXVDA4 for OCP 3.0
+    signal_note: certified_products = one entry per product type (OCP recognition + most specific marketplace segment)
+      among OCP-recognised listings; unrecognised listings are listing alone (participation). The REST data marks
+      no listing archived, so lapsed is false. Listing counts are context, never counted
+    detected_by: sweep-semiconductor-consortia.py
+    detected: '2026-10-21'
+    certified_products:
+    - product: 'OCP Accepted: Baseboard Management Controllers (BMC)'
+      recognition: OCP Accepted
+      product_type: Baseboard Management Controllers (BMC)
+      lapsed: false
+      listings: 1
+      newest_listing: '2023-10-06'
+    - product: 'OCP Accepted: IT Infrastructure'
+      recognition: OCP Accepted
+      product_type: IT Infrastructure
+      lapsed: false
+      listings: 1
+      newest_listing: '2021-10-25'
+    - product: 'OCP Accepted: Network Interface Cards (NICs)'
+      recognition: OCP Accepted
+      product_type: Network Interface Cards (NICs)
+      lapsed: false
+      listings: 12
+      newest_listing: '2026-08-24'
+    - product: 'OCP Accepted: Optical Transceivers'
+      recognition: OCP Accepted
+      product_type: Optical Transceivers
+      lapsed: false
+      listings: 1
+      newest_listing: '2021-10-25'
+  detected_by: sweep-semiconductor-consortia.py
+  first_seen: '2026-10-21'
+  partner_tier: OCP Accepted
+- partner_name: CHIPS for America (award recipients)
+  partner: null
+  partner_match: register-name
+  type: register
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.nist.gov/chips/chips-program-office-awards
+  category: semiconductor funding award
+  contract_reference:
+    register: 'CHIPS for America award recipients (nist.gov/chips: Program Office + R&D Office awards)'
+    standard: CHIPS and Science Act
+    spec_file: null
+    role: chips-award-recipient
+    registered_name: Intel Corporation
+    register_id: https://www.nist.gov/chips/chips-program-office-awards
+    matched_domain: null
+    matched_by: register-name
+    awards:
+    - office: CHIPS Program Office
+      site: New Albany, OH
+      amount: $1.5 billion in direct funding
+      status: awarded
+    - office: CHIPS Program Office
+      site: Hillsboro, OR
+      amount: $1.86 billion in direct funding
+      status: awarded
+    - office: CHIPS Program Office
+      site: Chandler, AZ
+      amount: $3.94 billion in direct funding
+      status: awarded
+    - office: CHIPS Program Office
+      site: Rio Rancho, NM
+      amount: $500 million in direct funding
+      status: awarded
+    signal_note: 'participation only: a federal funding award (manufacturing incentive or R&D), not conformance;
+      award count and amounts are context, never counted'
+    detected_by: sweep-semiconductor-consortia.py
+    detected: '2026-10-21'
+    register_name_note: register-name 'intel' = intel; wikidata P856 intel.cn, intel.com, intel.in, intel.me, intel.pl
+      agrees or unheld
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  detected_by: sweep-semiconductor-consortia.py
+  first_seen: '2026-10-21'
 generated: '2026-10-12'
 method: searched
 checked:
@@ -463,6 +573,13 @@ checked:
 - https://www.khronos.org/conformance/adopters/file-format-adopters
 - https://www.khronos.org/members/list
 - docker-hub/integrations/docker-hub-integration-edges.yml
+- https://riscv.landscape2.io/data/full.json
+- https://riscv.org/members/
+- https://www.nist.gov/chips/chips-program-office-awards
+- https://www.nist.gov/chips/chips-rd-office-awards
+- https://www.opencompute.org/products
+- https://www.opencompute.org/wp-json/wp/v2/companies
+- https://www.opencompute.org/wp-json/wp/v2/marketplace
 marketplace_apps: []
 source:
 - https://marketplace.visualstudio.com/vscode
