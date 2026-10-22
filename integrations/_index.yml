@@ -497,3 +497,135 @@
       P856 not contradicting (Kin 2026-10-20 decision 2)
   status: not-a-workflow
   arazzo: null
+- slug: intel-usb-if-certified-products
+  label: USB-IF certified products
+  partner_name: USB-IF certified products
+  category: USB compliance certification
+  type: register
+  channel: standard-directory
+  evidence: https://www.usb.org/products
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: USB-IF certified product list (usb.org/products)
+    standard: USB-IF Compliance Program
+    spec_file: null
+    role: usb-if-certified-product
+    registered_name: Intel Corporation
+    register_id: https://www.usb.org/products
+    matched_domain: null
+    matched_by: register-name
+    register_name_note: register-name 'intel' = intel; wikidata P856 intel.cn, intel.com, intel.in, intel.me, intel.pl
+      agrees or unheld
+    certified_products:
+    - product: USB certified product (unclassified)
+      lapsed: true
+      newest_certification: '2023-08-21'
+    - product: USB peripherals
+      lapsed: true
+      newest_certification: '2018-07-31'
+    - product: USB silicon and IP
+      lapsed: false
+      newest_certification: '2026-09-09'
+    - product: USB systems and hosts
+      lapsed: false
+      newest_certification: '2025-08-29'
+    products_sample:
+    - ' Intel Platform Controller Hub (PCH) xHCI Controller - Device ID 34ED'
+    - APRH1USB-2
+    - APRH2USB
+    - Altera® Agilex™ 5 FPGA
+    - Ambit NF2
+    - B0930AD4
+    - Baytrail Tablet FFRD
+    - Bluetooth PC module
+    signal_note: certified_products = one entry per USB product family, never per product or TID. lapsed = the family's
+      NEWEST certification is older than two years (USB-IF's own list hides those and says they may fail the current
+      Compliance Program)
+    detected_by: sweep-wireless-connectivity-certification.py
+    detected: '2026-10-22'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: intel-wi-fi-alliance-certified-products
+  label: Wi-Fi Alliance certified products
+  partner_name: Wi-Fi Alliance certified products
+  category: Wi-Fi certification
+  type: register
+  channel: standard-directory
+  evidence: https://www.wi-fi.org/product-finder
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Wi-Fi Alliance product finder (wi-fi.org/product-finder; prf.cert.wi-fi.org public JSON / CSV)
+    standard: Wi-Fi CERTIFIED
+    spec_file: null
+    role: wi-fi-certified-product
+    registered_name: Intel
+    register_id: WFA137519
+    matched_domain: null
+    matched_by: register-name
+    register_name_note: register-name 'intel' = intel; wikidata P856 intel.cn, intel.com, intel.in, intel.me, intel.pl
+      agrees or unheld
+    certified_products:
+    - product: Computers & Accessories
+      lapsed: false
+      newest_certification: '2024-08-20'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Other
+      lapsed: false
+      newest_certification: '2026-08-26'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Phones
+      lapsed: false
+      newest_certification: '2013-08-22'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Routers
+      lapsed: false
+      newest_certification: '2014-09-30'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    - product: Tablets, Ereaders & Cameras
+      lapsed: false
+      newest_certification: '2013-05-08'
+      generations:
+      - Wi-Fi 7
+      - Wi-Fi 6
+      - Wi-Fi 5 (ac)
+      - Wi-Fi 4 (n)
+    products_sample:
+    - 802.11b Access Point Model# ADM8628
+    - ADMTek 802.11b Wireless LAN Access Point / Gateway Reference Design
+    - ADMTek MiniPCI Cardbus NIC Model# ADM8211
+    - Compute Stick STCK1A32WFC
+    - Compute Stick STCK1A8LFC
+    - EASY330 VDSL BOND (Reference Board for GRX300/330 Family)
+    - Education Tablet
+    - Etisalat E-20
+    signal_note: certified_products = one entry per Wi-Fi Alliance product category, never per product, variant
+      or CID; generations are context. Wi-Fi CERTIFIED does not expire and the finder marks nothing withdrawn, so
+      lapsed is false
+    detected_by: sweep-wireless-connectivity-certification.py
+    detected: '2026-10-22'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
