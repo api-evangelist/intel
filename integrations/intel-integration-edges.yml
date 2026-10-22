@@ -389,56 +389,6 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-xr-graphics.py
   first_seen: '2026-10-20'
-- partner_name: Google Workspace (own)
-  partner: google-workspace
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://workspace.google.com/marketplace/app/intel_skills_for_innovation_for_google_c/16113332384
-  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
-  apps:
-  - Intel Skills for Innovation for Google Classroom™
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Google Workspace app
-- partner_name: Docker Hub (docker-verified-publisher)
-  partner: docker-hub
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: docker-verified-publisher
-  evidence: https://hub.docker.com/u/intel
-  mirror_of: docker-hub/integrations/docker-hub-integration-edges.yml
-  apps:
-  - intel/intel-gpu-plugin
-  - intel/intel-gpu-initcontainer
-  - intel/power-node-agent
-  - intel/ia-time-series-analytics-microservice
-  - intel/sglang-dev
-  - intel/multimodal-dataprep
-  - intel/text-to-speech
-  - intel/metrics-manager
-  - intel/sensor-manager
-  - intel/agent-quality-handler
-  - intel/multimodal-agentic-ui
-  - intel/vector-retriever-vdms
-  - intel/vms-adapter-backend
-  - intel/scenescape-tracker
-  - intel/vms-adapter-ui
-  listing_count: 1
-  detected: '2026-10-20'
-  detected_by: mirror-platform-listings.py
-  category: Docker Verified Publisher
-  badges:
-  - Docker Verified Publisher
 - partner_name: Open Compute Project marketplace
   partner: null
   partner_match: register
@@ -722,6 +672,89 @@ edges:
     detected: '2026-10-22'
   detected_by: sweep-openapi-directory-apis-guru.py
   first_seen: '2026-10-22'
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/intel_skills_for_innovation_for_google_c/16113332384
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Intel Skills for Innovation for Google Classroom™
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
+- partner_name: Docker Hub (docker-verified-publisher)
+  partner: docker-hub
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: docker-verified-publisher
+  evidence: https://hub.docker.com/u/intel
+  mirror_of: docker-hub/integrations/docker-hub-integration-edges.yml
+  apps:
+  - intel/intel-gpu-plugin
+  - intel/intel-gpu-initcontainer
+  - intel/power-node-agent
+  - intel/ia-time-series-analytics-microservice
+  - intel/sglang-dev
+  - intel/multimodal-dataprep
+  - intel/text-to-speech
+  - intel/metrics-manager
+  - intel/sensor-manager
+  - intel/agent-quality-handler
+  - intel/multimodal-agentic-ui
+  - intel/vector-retriever-vdms
+  - intel/vms-adapter-backend
+  - intel/scenescape-tracker
+  - intel/vms-adapter-ui
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: Docker Verified Publisher
+  badges:
+  - Docker Verified Publisher
+- partner_name: Artifact Hub (artifact-hub)
+  partner: artifact-hub
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: artifact-hub
+  evidence: https://artifacthub.io/packages/search?repo=intel
+  mirror_of: artifact-hub/integrations/artifact-hub-integration-edges.yml
+  apps:
+  - intel-device-plugins-gpu
+  - intel-gpu-resource-driver
+  - intel-device-plugins-operator
+  - ai-inference
+  - ai-structuring
+  - consul
+  - evam
+  - evam-dek
+  - evi-ai-inference
+  - evi-ai-inference-gpu
+  - evi-ai-structuring
+  - evi-clustering-archiving
+  - evi-consul
+  - evi-fm-master
+  - evi-fm-master-as
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: Artifact Hub listing (Helm chart)
+  badges:
+  - 'Verified publisher (Artifact Hub verified publisher: repository ownership proven)'
 generated: '2026-10-12'
 method: searched
 checked:
@@ -758,6 +791,7 @@ checked:
 - https://www.wi-fi.org/product-finder
 - https://api.apis.guru/v2/list.json
 - https://api.apis.guru/v2/providers.json
+- artifact-hub/integrations/artifact-hub-integration-edges.yml
 marketplace_apps: []
 source:
 - https://marketplace.visualstudio.com/vscode
