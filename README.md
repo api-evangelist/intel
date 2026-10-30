@@ -1,4 +1,4 @@
-# intel (intel)
+# Intel
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,58 +66,127 @@
 
 Discover Intel® Trust Authority, the independent attestation service for securing your confidential computing workloads.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/intel/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/intel/refs/heads/main/apis.yml)
+**Areas:** Fortune 100
 
-## Timestamps
+## Intel on APIs.io
 
-- **Modified:** 2026-05-19
+Everything profiled for Intel is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/intel/](https://apis.io/providers/intel/)** — or go straight to one of the APIs or properties below.
 
-## APIs
+### APIs (4)
 
-### Intel Trust Authority API
+- [intel Attestation API](https://apis.io/apis/intel/intel-attestation-api/) — Attestation verification operations
+- [intel Policies API](https://apis.io/apis/intel/intel-policies-api/) — Policy management operations
+- [intel Tokens API](https://apis.io/apis/intel/intel-tokens-api/) — Token management operations
+- [intel Tools API](https://apis.io/apis/intel/intel-tools-api/) — Developer tools and toolkit operations
 
-Intel Trust Authority REST API enables developers to build secure applications with confidence using attestation services. It provides Faithful Verification for unmatched transparency in the attestation process, allowing auditing of attestation tokens issued by Intel Trust Authority.
+### Published properties
 
-- **Human URL:** [https://docs.trustauthority.intel.com/main/articles/restapi-intro.html](https://docs.trustauthority.intel.com/main/articles/restapi-intro.html)
-- **Base URL:** `https://api.trustauthority.intel.com`
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-#### Tags
+#### GraphQL (1)
 
-- Attestation
-- Confidential Computing
-- Security
-- Trust
+GraphQL schemas.
 
-#### Properties
+- [Moved to /providers/intel/](https://apis.io/graphqls/intel/intel-graphql/)
 
-- [Documentation](https://docs.trustauthority.intel.com/main/articles/restapi-intro.html)
-- [OpenAPI](openapi/intel-trust-authority-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/intel-trust-authority-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/intel-trust-authority-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Agentic access (1)
 
-### Intel oneAPI
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Intel oneAPI is an open standard unified programming model for heterogeneous computing across CPUs, GPUs, AI accelerators, and FPGAs. It provides a cross-architecture programming interface that simplifies development across diverse computing accelerator architectures.
+- [Intel Agentic Access](https://apis.io/agentic-access/intel/intel-agentic-access/)
 
-- **Human URL:** [https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html](https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html)
-- **Base URL:** `https://api-portal.intel.com`
+#### Collections (6)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Accelerators
-- AI
-- Compute
-- GPU
-- Heterogeneous Computing
+- [Intel one Attestation API](https://apis.io/collections/intel/open-intel-attestation-api/)
+- [Intel oneAPI](https://apis.io/collections/intel/open-intel-oneapi/)
+- [Intel one Attestation Policies API](https://apis.io/collections/intel/open-intel-policies-api/)
+- [Intel one Attestation Tokens API](https://apis.io/collections/intel/open-intel-tokens-api/)
+- [Intel one Attestation Tools API](https://apis.io/collections/intel/open-intel-tools-api/)
+- [Intel Trust Authority API](https://apis.io/collections/intel/open-intel-trust-authority-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html)
-- [OpenAPI](openapi/intel-oneapi-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/intel-oneapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/intel-oneapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Intel Domain Security](https://apis.io/security/intel/intel-domain-security/)
 
-- [GitHub Organization](https://github.com/intel)
-- [LinkedIn](https://www.linkedin.com/company/intel-corporation)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Intel Plans Pricing](https://apis.io/plans/intel/intel-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Intel Rate Limits](https://apis.io/rate-limits/intel/intel-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Intel Finops](https://apis.io/finops/intel/intel-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://intel.com)
+- [Blog](https://newsroom.intel.com/feed)
+- [GitHub](https://github.com/intel)
+
+## API Evangelist rating
+
+**Kin Score 18.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 42.9 |
+| Contract quality | 44.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 7.9 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/intel/](https://apis.io/providers/intel/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Intel: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/intel/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
